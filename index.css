@@ -4,6 +4,21 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 4px;
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ffffff27;
+}
+
 body {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     background: radial-gradient(circle, #000033, #000000, #111111);
@@ -22,6 +37,7 @@ header {
     align-items: center;
     padding: 30px 120px;
     z-index: 100 !important;
+    position: fixed;
 }
 
 header > img {
@@ -63,6 +79,7 @@ header > .menu {
     justify-content: center;
     flex-direction: column;
     padding: 0 120px;
+    padding-top: 150px;
 }
 
 section {
@@ -109,12 +126,12 @@ section > .cards {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     overflow-x: auto;
 }
 
 section > .cards > .card {
-    width: 300px;
+    width: 250px;
     height: 100px;
     background: #ffffff0c;
     margin: 10px;
@@ -125,6 +142,7 @@ section > .cards > .card {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 section > .cards > .card:hover {
@@ -195,6 +213,7 @@ section > .cards > .card > .info > p {
 
     .container {
         padding: 0 30px;
+        padding-top: 200px;
     }
 
     section > .content > h1 {
