@@ -17,7 +17,7 @@
   </head>
   <body>
     <header class="sticky top-0 backdrop-blur-md">
-      <nav class="flex items-center justify-between p-8">
+      <nav class="flex items-center justify-between p-4 md:p-8">
         <div class="flex items-center gap-2">
           <img
             src="./assets/neobrains-rounded.png"
@@ -28,7 +28,7 @@
             >Neobrains</span
           >
         </div>
-        <ul class="flex items-center gap-6">
+        <ul class="hidden md:flex items-center gap-6">
           <li
             class="text-white text-xl font-semibold font-lato hover:text-gray-400 transition-colors"
           >
@@ -45,15 +45,30 @@
             Contact
           </li>
         </ul>
+        <button class="md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="white"
+              d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z"
+            />
+          </svg>
+        </button>
       </nav>
     </header>
     <main class="flex flex-col w-full h-full">
-      <div class="flex items-center gap-20 justify-center">
-        <div class="flex flex-col text-white gap-2">
-          <span class="font-exo-2 text-7xl font-semibold"
+      <div
+        class="flex flex-col lg:flex-row items-center lg:gap-20 justify-center"
+      >
+        <div class="flex flex-col text-white gap-2 p-2">
+          <span class="font-exo-2 text-7xl font-semibold text-left"
             >Storming Big Brains</span
           >
-          <span class="font-lato font-sembold text-2xl text-center"
+          <span class="font-lato font-sembold text-2xl text-left"
             >We at Neobrains develop stuff. Sometimes It works , sometimes it
             doesn't.</span
           >
