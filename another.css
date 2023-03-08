@@ -169,7 +169,7 @@ section > .cards > .card > .info > p {
 
     header {
         height: 80px;
-        padding: 0 20px;
+        padding: 0 30px;
     }
 
     header > img {
@@ -195,7 +195,7 @@ section > .cards > .card > .info > p {
     }
 
     .container {
-        padding: 0 20px;
+        padding: 0 30px;
     }
 
     section > .content > h1 {
@@ -208,5 +208,9 @@ section > .cards > .card > .info > p {
 
     #middle {
         flex-direction: column;
+    }
+
+    #exploring {
+        height: 200px;
     }
 }
