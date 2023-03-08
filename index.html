@@ -30,22 +30,22 @@
         </div>
         <ul class="hidden md:flex items-center gap-6">
           <li
-            class="text-white text-xl font-semibold font-lato hover:text-gray-400 transition-colors"
+            class="text-white text-xl font-semibold font-lato hover:cursor-pointer hover:text-gray-400 transition-colors"
           >
-            GitHub
+            <a href="https://github.com/neobrains">GitHub</a>
           </li>
           <li
-            class="text-white text-xl font-semibold font-lato hover:text-gray-400 transition-colors"
+            class="text-white text-xl font-semibold font-lato hover:cursor-pointer hover:text-gray-400 transition-colors"
           >
-            Discord
+            <a href="https://discord.gg/xEEpJvE9py">Discord</a>
           </li>
           <li
-            class="text-white text-xl font-semibold font-lato hover:text-gray-400 transition-colors"
+            class="text-white text-xl font-semibold font-lato hover:cursor-pointer hover:text-gray-400 transition-colors"
           >
-            Contact
+            <a href="mailto: admin@neobrains.me">Contact</a>
           </li>
         </ul>
-        <button class="md:hidden">
+        <button id="menu-open" class="md:hidden hover:cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -60,6 +60,35 @@
         </button>
       </nav>
     </header>
+    <div
+      id="mobile-view"
+      class="h-full w-0 fixed z-10 left-0 top-0 bg-gray-900 overflow-x-hidden transition-all ease-in delay-200"
+    >
+      <a
+        id="menu-close"
+        class="absolute top-5 right-11 text-5xl text-red-400 cursor-pointer hover:text-red-600"
+        >&times;</a
+      >
+      <div
+        class="flex h-full flex-col items-center justify-center text-white font-lato"
+      >
+        <a
+          class="font-semibold p-4 text-4xl block hover:text-gray-400"
+          href="https://github.com/neobrains"
+          >GitHub</a
+        >
+        <a
+          class="font-semibold p-4 text-4xl block hover:text-gray-400"
+          href="https://discord.gg/xEEpJvE9py"
+          >Discord</a
+        >
+        <a
+          class="font-semibold p-4 text-4xl block hover:text-gray-400"
+          href="mailto: abc@example.com"
+          >Contact</a
+        >
+      </div>
+    </div>
     <main class="flex flex-col">
       <div
         class="flex flex-col lg:flex-row items-center lg:gap-20 justify-center overflow-hidden"
@@ -81,6 +110,7 @@
         />
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
 <!---->
