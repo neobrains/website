@@ -1,3 +1,3 @@
 # Neobrains
 
-Source code for the official website of Neobrains ( http://neobrains.com/ ).
+Source code for the official website of Neobrains ( http://neobrains.me/ ).
