@@ -181,6 +181,55 @@ section > .cards > .card > .info > p {
     text-align: left;
 }
 
+@keyframes sildein {
+    0% {
+        bottom: -150px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+.modal {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.075);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000 !important;
+    border-radius: 20px 20px 0 0;
+    transition: 0.5s;
+    animation: sildein 0.5s;
+    backdrop-filter: blur(10px);
+}
+
+.modal > ul {
+    width: 100%;
+    height: max-content;
+    padding: 0 60px;
+}
+
+.modal > ul > li {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal > ul > li > a {
+    color: white;
+    font-size: 1.3rem;
+    padding: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 768px) {
 
@@ -209,6 +258,9 @@ section > .cards > .card > .info > p {
         cursor: pointer;
         width: 100%;
         text-align: right;
+    }
+    header > .menu > i {
+        padding: 10px;
     }
 
     .container {
