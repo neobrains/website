@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background: radial-gradient(circle, #000033, #000000, #111111);
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    padding: 30px 120px;
+    z-index: 100 !important;
+}
+
+header > img {
+    width: 45px;
+    height: 45px;
+}
+
+header > h4 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-left: 10px;
+}
+
+header > nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header > nav > a {
+    color: #fff;
+    font-size: 1.3rem;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+header > .menu {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 120px;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section > .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section > .content > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: invert(1);
+}
+
+section > .content > h1 {
+    width: 100%;
+    text-align: left;
+    font-size: 3rem;
+    color: #fff;
+}
+
+section > .content > p {
+    width: 100%;
+    text-align: left;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-top: 20px;
+}
+
+section > .cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+section > .cards > .card {
+    width: 300px;
+    height: 100px;
+    background: #ffffff0c;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+section > .cards > .card:hover {
+    background: #ffffff1f;
+}
+
+section > .cards > .card > img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+section > .cards > .card > .info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section > .cards > .card > .info > h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-left: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+section > .cards > .card > .info > p {
+    font-size: 0.8rem;
+    color: #fff;
+    margin-left: 22px;
+    width: 100%;
+    text-align: left;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    header {
+        height: 80px;
+        padding: 0 20px;
+    }
+
+    header > img {
+        width: 30px;
+        height: 30px;
+    }
+
+    header > h4 {
+        font-size: 1.3rem;
+    }
+
+    header > nav {
+        display: none;
+    }
+
+    header > .menu {
+        display: block;
+        font-size: 1rem;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        text-align: right;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    section > .content > h1 {
+        font-size: 1.5rem;
+    }
+
+    section > .content > p {
+        font-size: 1rem;
+    }
+
+    #middle {
+        flex-direction: column;
+    }
+}
