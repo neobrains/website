@@ -549,6 +549,10 @@ video {
   height: auto;
 }
 
+.max-h-screen {
+  max-height: 100vh;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -615,6 +619,10 @@ video {
 
 .gap-20 {
   gap: 5rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .fill-white {
