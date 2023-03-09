@@ -3,7 +3,7 @@ let modal = document.getElementById("modal");
 let isExpanded = false;
 expand.addEventListener("click", () => {
   if (isExpanded) {
-    expand.className = "fa fa-chevron-up";
+    expand.className = "fa-solid fa-bars";
     isExpanded = false;
     modal.style.display = "none";
   } else {
@@ -17,6 +17,6 @@ window.addEventListener("resize", () => {
   if (window.innerWidth > 768) {
     isExpanded = false;
     modal.style.display = "none";
-    expand.className = "fa fa-chevron-up";
+    expand.className = "fa-solid fa-bars";
   }
 });
