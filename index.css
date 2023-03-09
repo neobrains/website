@@ -183,10 +183,6 @@ section > .cards > .card > .info > p {
     text-align: left;
 }
 
-.content_dection {
-    height: 100%;
-}
-
 .cards_section {
     max-height: 250px;
 }
