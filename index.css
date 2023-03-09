@@ -69,6 +69,7 @@ header > nav > a {
 
 header > .menu {
     display: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -84,7 +85,7 @@ header > .menu {
 
 section {
     width: 100%;
-    height: 100%;
+    height:100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,7 +103,7 @@ section > .content {
 section > .content > img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     filter: invert(1);
     transform: scaleX(-1);
 }
@@ -110,7 +111,7 @@ section > .content > img {
 section > .content > h1 {
     width: 100%;
     text-align: left;
-    font-size: 3rem;
+    font-size: 6rem;
     color: #fff;
 }
 
@@ -133,6 +134,7 @@ section > .cards {
 
 section > .cards > .card {
     width: 100%;
+    min-width: 223px;
     height: 100px;
     background: #ffffff0c;
     margin: 10px;
@@ -232,6 +234,10 @@ section > .cards > .card > .info > p {
     cursor: pointer;
 }
 
+#cards-section {
+    height: 250px;
+}
+
 @media screen and (max-width: 768px) {
 
     header {
@@ -270,18 +276,20 @@ section > .cards > .card > .info > p {
     }
 
     section > .content > h1 {
-        font-size: 1.6rem;
+        font-size: 3rem;
     }
 
     section > .content > p {
         font-size: 1rem;
     }
 
-    #middle {
+    section > .content > img {
+        width: 300px;
+        height: 300px;
+    }
+
+    #content-section {
         flex-direction: column;
     }
 
-    #exploring {
-        height: 300px;
-    }
 }
