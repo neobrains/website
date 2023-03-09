@@ -184,7 +184,7 @@ section > .cards > .card > .info > p {
 }
 
 .cards_section {
-    max-height: 250px;
+    max-height: 200px;
 }
 
 @keyframes sildein {
@@ -280,7 +280,12 @@ section > .cards > .card > .info > p {
     }
 
     section > .content > p {
+        margin-top: 10px;
         font-size: 1rem;
+    }
+
+    section > .content > img {
+        max-height: 160px;
     }
 
     .content_section {
