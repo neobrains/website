@@ -664,6 +664,16 @@ video {
   border-radius: 0.375rem;
 }
 
+.rounded-r-3xl {
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.rounded-t-3xl {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
 .bg-\[\#ffffff0c\] {
   background-color: #ffffff0c;
 }
