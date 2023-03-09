@@ -652,10 +652,6 @@ video {
   overflow-x: hidden;
 }
 
-.rounded-3xl {
-  border-radius: 1.5rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -672,15 +668,6 @@ video {
 .rounded-t-3xl {
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
-}
-
-.bg-\[\#ffffff0c\] {
-  background-color: #ffffff0c;
-}
-
-.bg-gray-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 .bg-div-bg {
@@ -818,36 +805,14 @@ body {
   background: radial-gradient(circle, #000033, #000000, #111111);
 }
 
-/*
-section > .content > img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: invert(1);
-  transform: scaleX(-1);
+.remove-highlight {
+  -webkit-tap-highlight-color: transparent;
 }
-
-section > .cards > .card > img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 50%;
-}
-*/
 
 .hover\:scale-150:hover {
   --tw-scale-x: 1.5;
   --tw-scale-y: 1.5;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:bg-\[\#ffffff1f\]:hover {
-  background-color: #ffffff1f;
-}
-
-.hover\:bg-gray-800:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-hover-div-bg:hover {
