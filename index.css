@@ -183,6 +183,14 @@ section > .cards > .card > .info > p {
     text-align: left;
 }
 
+.content_dection {
+    height: 100%;
+}
+
+.cards_section {
+    max-height: 250px;
+}
+
 @keyframes sildein {
     0% {
         bottom: -150px;
@@ -234,10 +242,6 @@ section > .cards > .card > .info > p {
     cursor: pointer;
 }
 
-#cards-section {
-    height: 250px;
-}
-
 @media screen and (max-width: 768px) {
 
     header {
@@ -283,12 +287,7 @@ section > .cards > .card > .info > p {
         font-size: 1rem;
     }
 
-    section > .content > img {
-        width: 300px;
-        height: 300px;
-    }
-
-    #content-section {
+    .content_section {
         flex-direction: column;
     }
 
