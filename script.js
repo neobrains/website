@@ -7,7 +7,7 @@ expand.addEventListener("click", () => {
     isExpanded = false;
     modal.style.display = "none";
   } else {
-    expand.className = "fas fa-times";
+    expand.className = "fa-solid fa-xmark";
     isExpanded = true;
     modal.style.display = "flex";
   }
