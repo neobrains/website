@@ -1,0 +1,98 @@
+---
+import { SEO } from "astro-seo";
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="darkreader-lock" />
+
+    <SEO
+      title="Homepage"
+      description="Brainstorm, Build, Succeed. Our Github organization is where innovation meets implementation. We're a team of passionate individuals who love to brainstorm and bring our ideas to life. Discover our projects, ranging from simple tools to complex software solutions, and join our community of like-minded individuals. At Neobrains, we believe that success comes from collaboration and hard work. Join us today and be a part of something great."
+      titleTemplate="%s | Neobrains"
+      openGraph={{
+        basic: {
+          title:
+            "Brainstorm, Build, Succeed. Our Github organization is where innovation meets implementation. We're a team of passionate individuals who love to brainstorm and bring our ideas to life. Discover our projects, ranging from simple tools to complex software solutions, and join our community of like-minded individuals. At Neobrains, we believe that success comes from collaboration and hard work. Join us today and be a part of something great.",
+          type: "website",
+          image: "./neobrains-rounded.png",
+        },
+        image: {
+          alt: "Neobrains Logo",
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "./neobrains-rounded.png" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content: "./neobrains-rounded.png",
+          },
+          { name: "twitter:title", content: "Neobrains" },
+          {
+            name: "twitter:description",
+            content:
+              "Brainstorm, Build, Succeed. Our Github organization is where innovation meets implementation. We're a team of passionate individuals who love to brainstorm and bring our ideas to life. Discover our projects, ranging from simple tools to complex software solutions, and join our community of like-minded individuals. At Neobrains, we believe that success comes from collaboration and hard work. Join us today and be a part of something great.",
+          },
+        ],
+      }}
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2&family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="font-exo-2 h-full w-full overflow-x-hidden overflow-y-auto">
+    <slot />
+    <script src="../scripts/script.js"></script>
+    <style is:global>
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 4px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #ffffff27;
+      }
+
+      body {
+        background: radial-gradient(circle, #000033, #000000, #111111);
+      }
+
+      @keyframes sildein {
+        0% {
+          bottom: -150px;
+        }
+        100% {
+          bottom: 0;
+        }
+      }
+
+      .slide-in {
+        animation: sildein 0.5s ease-in-out;
+      }
+
+      .remove-highlight {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+  </body>
+</html>
