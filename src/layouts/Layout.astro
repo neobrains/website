@@ -13,6 +13,37 @@ const { title } = Astro.props;
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <SEO
+      title="Homepage"
+      description="Brainstorm, Build, Succeed. Our Github organization is where innovation meets implementation. We're a team of passionate individuals who love to brainstorm and bring our ideas to life. Discover our projects, ranging from simple tools to complex software solutions, and join our community of like-minded individuals. At Neobrains, we believe that success comes from collaboration and hard work. Join us today and be a part of something great."
+      titleTemplate="%s | Neobrains"
+      openGraph={{
+        basic: {
+          title:
+            "Brainstorm, Build, Succeed. Our Github organization is where innovation meets implementation. We're a team of passionate individuals who love to brainstorm and bring our ideas to life. Discover our projects, ranging from simple tools to complex software solutions, and join our community of like-minded individuals. At Neobrains, we believe that success comes from collaboration and hard work. Join us today and be a part of something great.",
+          type: "website",
+          image: "./neobrains-rounded.png",
+        },
+        image: {
+          alt: "Neobrains Logo",
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "./neobrains-rounded.png" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content: "./neobrains-rounded.png",
+          },
+          { name: "twitter:title", content: "Neobrains" },
+          {
+            name: "twitter:description",
+            content:
+              "Brainstorm, Build, Succeed. Our Github organization is where innovation meets implementation. We're a team of passionate individuals who love to brainstorm and bring our ideas to life. Discover our projects, ranging from simple tools to complex software solutions, and join our community of like-minded individuals. At Neobrains, we believe that success comes from collaboration and hard work. Join us today and be a part of something great.",
+          },
+        ],
+      }}
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
