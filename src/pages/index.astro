@@ -52,9 +52,18 @@ const projects = repos
 
 <Layout title="Neobrains">
   <div
+    class="md:hidden bg-hover-div-bg rounded-full fixed bottom-4 right-4 block p-2 text-lg text-white cursor-pointer text-right overflow-hidden"
+  >
+    <i class="p-2 fa-solid fa-bars" id="expand"></i>
+  </div>
+  <div
     id="modal"
     class="left-0 bottom-0 slide-in w-full h-64 fixed bg-[rgba(0, 0, 0, 0.075)] hidden items-center z-50 rounded-t-3xl rounded-r-3xl backdrop-blur-md"
   >
+    <i
+      id="collapse"
+      class="text-white fixed top-4 right-4 p-2 bg-hover-div-bg rounded-full fa-solid fa-xmark"
+    ></i>
     <ul class="w-full pt-0 h-max">
       {
         navbar.map(({ name, url }) => (
@@ -93,11 +102,6 @@ const projects = repos
         ))
       }
     </nav>
-    <div
-      class="md:hidden block p-2 text-lg text-white cursor-pointer w-full text-right overflow-hidden"
-    >
-      <i class="p-2 fa-solid fa-bars" id="expand"></i>
-    </div>
   </header>
   <div class="flex flex-col p-8 md:px-32 md:pt-8 overflow-hidden">
     <section class="flex flex-col md:flex-row items-center">
