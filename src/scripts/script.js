@@ -20,3 +20,4 @@ window.addEventListener("resize", () => {
     expand.className = "fa-solid fa-bars";
   }
 });
+

@@ -46,6 +46,21 @@ const team = [
     avatar: "https://avatars.githubusercontent.com/u/84300788?v=4",
   },
 ];
+
+const response = await fetch("https://api.github.com/users/neobrains/repos");
+const repos = await response.json();
+const no_include = [".github", "deta-bot", "basic-deta", "space-push"];
+
+const projects = repos
+  .filter((project) => !no_include.includes(project.name))
+  .map(({ name, full_name, html_url, description }) => {
+    return {
+      name,
+      full_name,
+      html_url,
+      description,
+    };
+  });
 ---
 
 <Layout title="Neobrains">
@@ -132,10 +147,34 @@ const team = [
         but we are committed to learning from our experiences and continuously
         improving our approach.
       </span>
-      <section class="text-white flex flex-col items-start text-left">
-        <!--here projects section-->
+
+      <section
+        class="text-white flex flex-col items-start text-left mb-4 gap-4 w-full"
+      >
+        <span class="text-white font-semibold text-2xl md:text-4xl text-left"
+          >Our Projects</span
+        >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+          {
+            projects.map(({ name, full_name, html_url, description }) => (
+              <a
+                href={html_url}
+                target="_blank"
+                class="flex flex-col font-lato gap-2 items-start text-left p-4 bg-div-bg hover:bg-hover-div-bg transition-colors"
+              >
+                <span class="font-semibold font-exo-2 text-lg md:text-xl">
+                  {full_name}
+                </span>
+                <span class="text-sm md:text-base font-medium">
+                  {description}
+                </span>
+              </a>
+            ))
+          }
+        </div>
       </section>
-      <section class="flex flex-col overflow-hidden w-full">
+
+      <section class="flex flex-col mt-12 overflow-hidden w-full">
         <span class="text-white font-semibold text-2xl md:text-4xl text-left"
           >Our Team</span
         >
