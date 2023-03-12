@@ -145,13 +145,13 @@ const projects = repos
         <span class="text-white font-semibold text-2xl md:text-4xl text-left"
           >Our Projects</span
         >
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+        <div id="cards" class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
           {
             projects.map(({ name, full_name, html_url, description }) => (
               <a
                 href={html_url}
                 target="_blank"
-                class="flex flex-col font-lato gap-2 items-start text-left p-4 bg-div-bg hover:bg-hover-div-bg transition-colors rounded-md"
+                class="card flex flex-col font-lato gap-2 items-start text-left p-4 rounded-md"
               >
                 <span class="font-semibold font-exo-2 text-lg md:text-xl">
                   {full_name}
@@ -165,7 +165,7 @@ const projects = repos
           <a
             href={github_url}
             target="_blank"
-            class="flex flex-col font-lato gap-2 items-start text-left p-4 bg-div-bg hover:bg-hover-div-bg transition-colors rounded-md"
+            class="card flex flex-col font-lato gap-2 items-start text-left p-4 bg-div-bg hover:bg-hover-div-bg transition-colors rounded-md"
           >
             <span class="font-semibold font-exo-2 text-lg md:text-xl">
               And more soon....

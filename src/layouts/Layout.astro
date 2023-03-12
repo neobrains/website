@@ -105,6 +105,55 @@ const { title } = Astro.props;
       .slide-in {
         animation: sildein 0.5s ease-in-out;
       }
+
+      #cards {
+      }
+
+      #cards:hover > .card::after {
+        opacity: 1;
+      }
+
+      .card {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .card:hover::before {
+        opacity: 1;
+      }
+
+      .card::before,
+      .card::after {
+        border-radius: inherit;
+        content: "";
+        height: 100%;
+        left: 0px;
+        opacity: 0;
+        position: absolute;
+        top: 0px;
+        transition: opacity 500ms;
+        width: 100%;
+      }
+
+      .card::before {
+        background: radial-gradient(
+          600px circle at var(--mouse-x) var(--mouse-y),
+          rgba(255, 255, 255, 0.06),
+          transparent 90%
+        );
+        z-index: 3;
+      }
+
+      .card::after {
+        background: radial-gradient(
+          400px circle at var(--mouse-x) var(--mouse-y),
+          rgba(255, 255, 255, 0.2),
+          transparent 90%
+        );
+        z-index: 1;
+      }
     </style>
   </body>
 </html>
