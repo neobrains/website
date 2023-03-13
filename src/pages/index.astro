@@ -20,34 +20,76 @@ const navbar = [
   },
 ];
 
-const team_data = await fetch("https://api.github.com/orgs/neobrains/members")
-  .then((res) => res.json())
-  .catch((err) => console.log(err));
-const owners = ["AyushSehrawat", "jnsougata"];
+const CACHE_EXPIRY_TIME = 3600; // Cache data for 1 hour
 
-const team = team_data.map(({ login, avatar_url, html_url }) => {
-  return {
-    name: login,
-    avatar: avatar_url,
-    github: html_url,
-    role: owners.includes(login) ? "Owner" : "Member",
-  };
-});
+async function fetchTeamData() {
+  const cacheKey = "teamData";
+  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
+  if (cachedData && Date.now() < cachedData.expiryTime) {
+    console.log("Fetching team data from cache...");
+    return cachedData.data;
+  }
 
-const response = await fetch("https://api.github.com/users/neobrains/repos");
-const repos = await response.json();
-const no_include = [".github", "deta-bot", "basic-deta", "space-push"];
-
-const projects = repos
-  .filter((project) => !no_include.includes(project.name))
-  .map(({ name, full_name, html_url, description }) => {
+  console.log("Fetching team data from API...");
+  const response = await fetch("https://api.github.com/orgs/neobrains/members");
+  const data = await response.json();
+  const owners = ["AyushSehrawat", "jnsougata"];
+  const team = data.map(({ login, avatar_url, html_url }) => {
     return {
-      name,
-      full_name,
-      html_url,
-      description,
+      name: login,
+      avatar: avatar_url,
+      github: html_url,
+      role: owners.includes(login) ? "Owner" : "Member",
     };
   });
+
+  const expiryTime = Date.now() + CACHE_EXPIRY_TIME * 1000;
+  localStorage.setItem(cacheKey, JSON.stringify({ data: team, expiryTime }));
+  return team;
+}
+
+async function fetchRepoData() {
+  const cacheKey = "repoData";
+  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
+  if (cachedData && Date.now() < cachedData.expiryTime) {
+    console.log("Fetching repo data from cache...");
+    return cachedData.data;
+  }
+
+  console.log("Fetching repo data from API...");
+  const response = await fetch("https://api.github.com/users/neobrains/repos");
+  const data = await response.json();
+  const no_include = [".github", "deta-bot", "basic-deta", "space-push"];
+  const projects = data
+    .filter((project) => !no_include.includes(project.name))
+    .map(({ name, full_name, html_url, description }) => {
+      return {
+        name,
+        full_name,
+        html_url,
+        description,
+      };
+    });
+
+  const expiryTime = Date.now() + CACHE_EXPIRY_TIME * 1000;
+  localStorage.setItem(
+    cacheKey,
+    JSON.stringify({ data: projects, expiryTime })
+  );
+  return projects;
+}
+
+async function fetchData() {
+  const [team, projects] = await Promise.all([
+    fetchTeamData(),
+    fetchRepoData(),
+  ]);
+  return { team, projects };
+}
+
+const data = await fetchData();
+const team = data.team || [];
+const projects = data.projects || [];
 ---
 
 <Layout title="Neobrains">
@@ -123,7 +165,7 @@ const projects = repos
       <img
         src="man-exploring-globe.png"
         alt="brainstorming"
-        class="justify-end invert lg:w-1/2 lg:h-1/2 scale-125 hover:scale-150 ease-in-out transition-all delay-200"
+        class="image-contaner justify-end invert lg:w-1/2 lg:h-1/2 scale-125 hover:scale-150 ease-in-out transition-all delay-200"
       />
     </section>
     <section class="text-white flex flex-col items-start text-left">
@@ -181,13 +223,16 @@ const projects = repos
         <span class="text-white font-semibold text-2xl md:text-4xl text-left"
           >Our Team</span
         >
-        <div class="flex mt-8 gap-4 flex-col lg:flex-row overflow-x-hidden">
+        <div
+          id="cards"
+          class="flex mt-8 gap-4 flex-col lg:flex-row overflow-x-hidden"
+        >
           {
             team.map(({ name, role, github, avatar }) => (
               <a
                 href={github}
                 target="_blank"
-                class="flex overflow-hidden bg-div-bg hover:bg-hover-div-bg transition-colors gap-4 w-full lg:w-1/4 items-center p-4 font-lato rounded-md hover:cursor-pointer"
+                class="card flex overflow-hidden gap-4 w-full lg:w-1/4 items-center p-4 font-lato rounded-md hover:cursor-pointer"
               >
                 <img src={avatar} alt={name} class="rounded-full h-16 w-16" />
                 <div class="flex flex-col gap-1">
