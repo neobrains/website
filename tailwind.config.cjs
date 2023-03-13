@@ -6,6 +6,7 @@ module.exports = {
 		  colors: {
 			"div-bg": "#ffffff0f",
 			"hover-div-bg": "#ffffff1f",
+			"menu": "#ffffff3f",
 		  },
 		  fontFamily: {
 			"exo-2": ["'Exo 2'", "sans-serif"],
