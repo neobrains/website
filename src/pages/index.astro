@@ -225,14 +225,14 @@ const projects = data.projects || [];
         >
         <div
           id="cards"
-          class="flex mt-8 gap-4 flex-col lg:flex-row overflow-x-hidden"
+          class="mt-8 overflow-x-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
         >
           {
             team.map(({ name, role, github, avatar }) => (
               <a
                 href={github}
                 target="_blank"
-                class="card flex overflow-hidden gap-4 w-full lg:w-1/4 items-center p-4 font-lato rounded-md hover:cursor-pointer"
+                class="card flex overflow-hidden gap-4 items-center p-4 font-lato rounded-md hover:cursor-pointer"
               >
                 <img src={avatar} alt={name} class="rounded-full h-16 w-16" />
                 <div class="flex flex-col gap-1">
