@@ -3,12 +3,14 @@ let collapse = document.getElementById("collapse");
 let modal = document.getElementById("modal");
 let isExpanded = false;
 
-expand.addEventListener("click", () => {
+expand.addEventListener("click", (event) => {
+  event.stopPropagation();
   isExpanded = true;
   modal.style.display = "flex";
 })
 
-collapse.addEventListener("click", () => {
+collapse.addEventListener("click", (event) => {
+  event.stopPropagation();
   isExpanded = false;
   modal.style.display = "none";
 });
