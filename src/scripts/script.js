@@ -3,10 +3,10 @@ let collapse = document.getElementById("collapse");
 let modal = document.getElementById("modal");
 let isExpanded = false;
 
-expand.addEventListener("click", (event) => {
-  event.stopPropagation();
+expand.addEventListener("click", (ev) => {
   isExpanded = true;
   modal.style.display = "flex";
+  ev.stopPropagation();
 })
 
 collapse.addEventListener("click", (event) => {
