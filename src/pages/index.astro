@@ -53,6 +53,10 @@ async function fetchRepoData() {
   }
   const response = await fetch("https://api.github.com/users/neobrains/repos");
   const data = await response.json();
+  const bitwrap = await fetch(
+    "https://api.github.com/users/bitwrap/repos"
+  ).then((res) => res.json());
+  data.push(...bitwrap);
   const no_include = [".github", "deta-bot", "basic-deta", "space-push"];
   const projects = data
     .filter((project) => !no_include.includes(project.name))
