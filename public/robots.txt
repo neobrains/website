@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neobrains.me/sitemap-index.xml
+Sitemap: https://neobrains.dev/sitemap-index.xml
